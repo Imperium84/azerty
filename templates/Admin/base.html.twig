@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Greta{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ asset('style/admin.css') }}"/>
+    {% endblock %}
+</head>
+<body>
+
+<header id="header">
+    <div id="identifiant">
+        {#                <a href="avatar"><img id="avatar" src={{asset('upload/avatar/'~user.avatar) }} alt="avatar"/></a>#}
+        <p>Bonjour <b>Nom Prénom</b>  !</p>
+
+    </div>
+
+    <div id="centreHeader"> <a href="http://localhost:8000/"><img id="logo" src="{{ asset('img/greta.png') }}" alt="logo"></a></div>
+
+    <nav id="menu">
+        <ul>
+            <a href="/"><li>Accueil</li></a>
+            <a href="/admin"><li>Dashboard</li></a>
+            <a href="#"><li>Compte</li></a>
+            <a href="#"><li>Déconnexion</li></a>
+        </ul>
+    </nav>
+</header>
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src={{ asset('js/admin.js') }}></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+<footer id="footer">
+    <a href="#" id="mentions">Mentions Légales</a>
+    <div id="texte">Site réalisé en 2019 par la formation TP Développeur Web</div>
+</footer>
+</body>
+
+
+
+</html>

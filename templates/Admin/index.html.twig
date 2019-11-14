@@ -1,0 +1,154 @@
+{% extends "Admin/base.html.twig" %}
+{% block body %}
+    <main>
+        <section id="hautMain">
+            <h1 id="greta">Dashboard admin GRETA</h1>
+            <h3 id="sous-titre">Gérer les formations, les années et les promotions</h3>
+        </section>
+
+        <section id="principale">
+            <ul class="nav nav-tabs" id="onglets" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="formations-tab" data-toggle="tab" href="#formations" role="tab"
+                       aria-controls="formations" aria-selected="true">
+                        Formations
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="annees-tab" data-toggle="tab" href="#annees" role="tab"
+                       aria-controls="annees" aria-selected="false">
+                        Années
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="promotions-tab" data-toggle="tab" href="#promotions" role="tab"
+                       aria-controls="promotions" aria-selected="false">
+                        Promotions
+                    </a>
+                </li>
+
+            </ul>
+
+
+
+            <div id="resultats" class="tab-content container">
+                <div class="row tab-pane fade show active" id="formations" role="tabpanel" aria-labelledby="formations-tab">
+                    <p> Ajouter une formation
+                        <button class="monBouton btn btn-primary btn-lg" data-toggle="modal" data-target="#modalForma">
+                            <img class="ajouter" src="{{ asset('img/add.png') }}" alt="ajouter">
+                        </button>
+                    </p>
+                {% for degree in degrees %}
+                    <div class="uneDiv">
+                        <span class="para">{{ degree.name }}</span>
+                        <span class="icones">
+                                <img src="{{ asset('img/edit.png') }}" alt="modifier">
+                                <img src="{{ asset('img/remove.png') }}" alt="supprimer">
+                            </span>
+                    </div>
+
+                {% endfor %}
+                </div>
+
+                <div class="row tab-pane fade" id="annees"role="tabpanel" aria-labelledby="annees-tab">
+                    <p> Ajouter une année
+                        <button class="monBouton btn btn-primary btn-lg" data-toggle="modal" data-target="#modalYears">
+                            <img class="ajouter" src="{{ asset('img/add.png') }}" alt="ajouter">
+                        </button>
+                    </p>
+                {% for year in years %}
+                    <div class="uneDiv">
+                        <span class="para">{{ year.title }}</span>
+                        <span class="icones">
+                                <img src="{{ asset('img/edit.png') }}" alt="modifier">
+                                <img src="{{ asset('img/remove.png') }}" alt="supprimer">
+                        </span>
+                    </div>
+
+                {% endfor %}
+                </div>
+
+                <div class="row tab-pane fade" id="promotions"role="tabpanel" aria-labelledby="promotions-tab">
+                    <p> Ajouter une promotion
+                        <button class="monBouton btn btn-primary btn-lg" data-toggle="modal" data-target="#modalPromo">
+                            <img class="ajouter" src="{{ asset('img/add.png') }}" alt="ajouter">
+                        </button>
+                    </p>
+                    {% for promo in promotions %}
+                        <div class="uneDiv">
+                            <span class="para">{{ promo.degree.name }} {{ promo.year.title }}</span>
+                            <span class="icones">
+                                <img src="{{ asset('img/edit.png') }}" alt="modifier">
+                                <img src="{{ asset('img/remove.png') }}" alt="supprimer">
+                        </span>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+{#        Formation#}
+        <div class="modal fade" id="modalForma" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Ajouter une formation</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        {{ form_start(form) }}
+                        {{ form_row(form.names) }}
+                        <input type="submit" value="Ok">
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{#        Année#}
+        <div class="modal fade" id="modalYears" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Ajouter une Année</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" name="addYears" action="{{ path('admin.year.new') }}" method="post">
+{#                            <label for="nomYears">Année à ajouter (ex: 2010/2011)</label>#}
+{#                            <input type="text" name="nomYears" id="nomYears">#}
+{#                            <input type="submit" value="Ok">#}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{#        Promotion#}
+        <div class="modal fade" id="modalPromo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Ajouter une Promotion</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" name="addPromo" action="{{ path('admin.promotion.new') }}" method="post">
+{#                            <label for="nomPromo">Nom de la Promotion:</label>#}
+{#                            <input type="text" name="nomPromo" id="nomPromo">#}
+
+{#                            <label for="datePromo">Année de la promotion:</label>#}
+{#                            <input type="text" name="datePromo" id="datePromo">#}
+
+                            <input type="submit" value="Ok">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}

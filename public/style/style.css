@@ -1,0 +1,391 @@
+/*POLICES ET GENERAL*/
+@font-face {
+	font-family: 'airplanes_in_the_night_skyRg';
+	src: url('./font/airplane/airplanes_in_the_night_sky-webfont.eot');
+	src: url('./font/airplane/airplanes_in_the_night_sky-webfont.eot?#iefix') format('embedded-opentype'),
+	url('./font/airplane/airplanes_in_the_night_sky-webfont.woff2') format('woff2'),
+	url('./font/airplane/airplanes_in_the_night_sky-webfont.woff') format('woff'),
+	url('./font/airplane/airplanes_in_the_night_sky-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'handwriting-draft_free-versRg';
+	src: url('font/handwriting/handwriting-draft_free-version-webfont.eot');
+	src: url('font/handwriting/handwriting-draft_free-version-webfont.eot?#iefix') format('embedded-opentype'),
+	url('font/handwriting/handwriting-draft_free-version-webfont.woff2') format('woff2'),
+	url('font/handwriting/handwriting-draft_free-version-webfont.woff') format('woff'),
+	url('font/handwriting/handwriting-draft_free-version-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+*
+{
+	font-family: "airplanes_in_the_night_skyRg", sans-serif;
+}
+
+
+body
+{
+	margin: 0 auto;
+	padding: 0;
+	width: 1920px;
+	height: auto;
+}
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover
+{
+	color: #B0413E;
+}
+
+ul
+{
+	padding: 0;
+}
+
+li
+{
+	list-style: none;
+}
+
+section
+{
+	width: 80%;
+	margin:0 auto;
+}
+
+/*HEADER*/
+header
+{
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	margin-bottom: 5%;
+	justify-content: space-around;
+	background-color: lightgray;
+}
+
+#identifiant
+{
+	margin-top:1%;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+#identifiant p b
+{
+	color: #B0413E;
+}
+
+
+#avatar
+{
+	width: 80%;
+	margin-top: -17%;
+}
+
+#avatarDiv
+{
+	width: 240px;
+	margin: 0 auto;
+}
+#avatarGrand
+{
+	width: 250px;
+	margin:0 auto;
+}
+
+#centreHeader
+{
+	margin-left:5%;
+}
+
+#logo
+{
+	max-width:80%;
+}
+
+#menu
+{
+	width: 20%;
+	margin-top:1%;
+	border: 1px solid black;
+	height: 75px;
+	line-height: 44px;
+	color: #B0413E;
+}
+
+#menu ul
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#menu ul a 
+{
+	margin-right: 6%;
+	color: #B0413E;
+}
+
+/*MAIN*/
+main
+{
+	margin: 0 auto;
+	text-align: center;
+	min-height: 60vh;
+}
+
+#greta
+{
+	border: 1px solid black;
+	background-color: #a3b4a2;
+	padding: 1%;
+	color: #B0413E;
+	font-family: 'handwriting-draft_free-versRg', serif;
+	font-size: 2em;
+}
+
+h3
+{
+	font-weight: normal;
+	font-size: 1.8em;
+}
+
+#formulaire
+{
+	background-color: #38686a;
+	padding: 1%;
+}
+
+#formation
+{
+	padding: 1%;
+}
+
+select
+{
+	font-family: "airplanes_in_the_night_skyRg", sans-serif;
+}
+
+#annee
+{
+	padding: 1%;
+}
+
+#bouton
+{
+	padding: 1%;
+	width: 10%;
+}
+
+#tableau
+{
+	margin:0 auto;
+	min-height: 75vh;
+}
+
+#tableau > div
+{
+	text-align: center;
+}
+
+#field
+{
+	border: 1px solid black;
+	/*margin: 1% 25%;*/
+	/*max-width: 50%;*/
+}
+
+#resultats a:hover dd li
+{
+	color: #B0413E;
+}
+
+#titre
+{
+	border: 1px solid grey;
+	border-collapse: collapse;
+	margin: 1% 0;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 1.4em;
+	color: #B0413E;
+	font-weight: bold;
+}
+
+#titre li
+{
+	margin: 1% 0;
+	font-family: "handwriting-draft_free-versRg", sans-serif;
+}
+
+.liste
+{
+
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.liste li, .promo
+{
+	font-family: 'airplanes_in_the_night_skyRg', serif;
+	font-weight: bold;
+}
+
+li
+{
+	width: 25%;
+}
+
+#nomColonne
+{
+	font-weight: bold;
+}
+
+.lienProfil
+{
+	margin: 2% 0;
+	color: black;
+}
+
+.promo
+{
+	display:block;
+}
+
+.searchAvatar img
+{
+	width: 25%;
+}
+
+#ficheIndividu
+{
+	width: 60%;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+}
+
+#avatar-individu
+{
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	width: 30%;
+}
+
+#avatar-individu > img
+{
+	width: 40%;
+}
+
+/*FOOTER*/
+footer
+{
+	margin-top: 15px;
+	height: 150px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #38686a;
+	justify-content: space-around;
+	color: white;
+	line-height: 150px;
+}
+
+footer > a
+{
+	color: white;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 600px)
+{
+	header
+	{
+		display: block;
+		text-align: left;
+	}
+
+	#avatar
+	{
+		margin-top: 0;
+	}
+	
+	#centreHeader
+	{
+		display: none;
+	}
+	
+	#logoCacher
+	{
+		display: block;
+	}
+
+	#logo
+	{
+		width: 14%;
+	}
+	
+	#menu
+	{
+		width: 95%;
+		margin:0 auto;
+	}
+	
+	#identifiant
+	{
+		justify-content: normal;
+	}
+
+	h1
+	{
+		width: 95%;
+		margin:0 auto;
+	}
+
+	h3
+	{
+		width: 95%;
+		margin:0 auto;
+	}
+
+	#formulaire
+	{
+		width: 95%;
+		margin:2% auto;
+	}
+
+	#field
+	{
+		max-width: 90%;
+		width: 100%;
+		margin:0 auto;
+		font-size: 0.8em;
+	}
+
+	#table
+	{
+		width: 100%;
+		margin:0 auto;
+	}
+
+	#footer
+	{
+		display: block;
+	}
+}
+

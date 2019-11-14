@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <main>
+        <fieldset id="ficheIndividu">
+            <legend>Fiche Individuelle</legend>
+            <p id="avatar-individu"><img src="{{asset('upload/avatar/'~user.avatar) }}" alt="avatar"></p>
+            <p> <b>Nom:</b> {{ user.lastname }}</p>
+            <p> <b>Prénom:</b> {{ user.firstname }}</p>
+            <p> <b>Formations:</b> </p>
+            {%  for promo in user.promotions %}
+                <p>{{ promo.degree.name }}</p>
+            {% endfor %}
+            <p> <b>Ville:</b> {{ user.city }}</p>
+            <p> <b>Date de naissance: </b> {{ user.birthdate.format("d - m - Y") }}</p>
+        </fieldset>
+
+    </main>
+{% endblock %}

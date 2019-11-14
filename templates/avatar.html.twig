@@ -1,0 +1,5 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {% set avatarDir = constant('App\\Service\\Avatar\\SvgAvatarFactory::AVATAR_DIR') %}
+    <div id="avatarDiv"><img id="avatar" src={{ asset(upload_dir~'/'~avatarDir~'/'~ fileName) }} alt="avatar"/></div>
+{% endblock %}

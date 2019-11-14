@@ -1,0 +1,81 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <main>
+        <section id="hautMain">
+            <h1 id="greta">Bienvenue sur l'annuaire des anciens élèves du GRETA</h1>
+            <h3>Faites votre recherche sur l'annuraire de nos anciens élèves et accéder
+                à sa fiche individuelle</h3>
+        </section>
+
+        <section>
+            <div id="formulaire">
+                <form method="post" action="{{ path('index') }}">
+                    <select id="formation" name="formation" size="1">
+                        <option value=""><p>-- Toutes les formation --</p></option>
+                        {% for formation in degrees %}
+                        <option value="{{ formation.id }}">{{ formation.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="annee"></label>
+                    <select id="annee" name="annee" size="1">
+                        <option value="">-- Toutes les années --</option>
+                        {% for year in years %}
+                            <option value="{{ year.id }}">{{ year.title }}</option>
+                        {% endfor %}
+                    </select>
+                    <input id="bouton" type="submit" value="GO">
+                </form>
+            </div>
+        </section>
+
+        <section id="tableau">
+
+            {% if theYear is not empty %}
+            <div>
+                <p>Formation: <b>{{ theYear.title }}</b></p>
+                <p>Année: <b>{{ theDegree.name }}</b></p>
+            </div>
+            {% endif %}
+
+            <fieldset id="field">
+                <legend>Résultat de la recherche</legend>
+                <ul id="resultats">
+                    <dd id="titre">
+                        <li id="searchNom">Nom</li>
+                        <li id="searchPrenom">Prénom</li>
+                        <li id="searchFormation">Formation suivie</li>
+                        <li id="searchAvatar">Avatar</li>
+                    </dd>
+
+                    {% if resultat is not empty %}
+                        {% for res in resultat %}
+
+                            <a href="{{path('alumni.index',{"id":res.id,"slug":res.slug})}}" class="lienProfil">
+                            <dd class="liste">
+
+                                <li>{{ res.lastname }}</li>
+
+
+                                <li>{{ res.firstname }}</li>
+
+                                <li>
+                                    {%  for promo in res.promotions %}
+                                        <span class="promo">{{ promo.degree.name }}</span>
+                                    {% endfor %}
+                                </li>
+                                <li class="searchAvatar"><img src={{asset('upload/avatar/'~res.avatar) }} alt="avatar"></li>
+                            </dd>
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+
+                </ul>
+            </fieldset>
+
+        </section>
+
+
+    </main>
+
+{% endblock %}
+{% use "footer.html.twig" %}

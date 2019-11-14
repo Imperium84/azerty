@@ -1,0 +1,274 @@
+/*POLICES ET GENERAL*/
+@font-face {
+    font-family: 'airplanes_in_the_night_skyRg';
+    src: url('./font/airplane/airplanes_in_the_night_sky-webfont.eot');
+    src: url('./font/airplane/airplanes_in_the_night_sky-webfont.eot?#iefix') format('embedded-opentype'),
+    url('./font/airplane/airplanes_in_the_night_sky-webfont.woff2') format('woff2'),
+    url('./font/airplane/airplanes_in_the_night_sky-webfont.woff') format('woff'),
+    url('./font/airplane/airplanes_in_the_night_sky-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'handwriting-draft_free-versRg';
+    src: url('font/handwriting/handwriting-draft_free-version-webfont.eot');
+    src: url('font/handwriting/handwriting-draft_free-version-webfont.eot?#iefix') format('embedded-opentype'),
+    url('font/handwriting/handwriting-draft_free-version-webfont.woff2') format('woff2'),
+    url('font/handwriting/handwriting-draft_free-version-webfont.woff') format('woff'),
+    url('font/handwriting/handwriting-draft_free-version-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+*
+{
+    font-family: "airplanes_in_the_night_skyRg", sans-serif;
+}
+
+ul
+{
+    padding: 0;
+}
+
+li
+{
+    list-style: none;
+}
+
+html
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0 auto;
+    padding: 0;
+    width: 1920px;
+    min-height: 100%;
+}
+
+img
+{
+    cursor: pointer;
+}
+
+
+
+/*HEADER*/
+#header
+{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    /*margin-bottom: 5%;*/
+    justify-content: space-around;
+    border: 1px solid #B0413E;
+    background-color: lightgray;
+}
+
+#identifiant
+{
+    margin-top:1%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#identifiant p b
+{
+    color: #B0413E;
+}
+
+
+#logo
+{
+    max-width: 60%;
+}
+
+#menu
+{
+    width: 20%;
+    margin-top:1%;
+    border: 1px solid black;
+    height: 75px;
+    line-height: 75px;
+}
+
+#menu ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#menu ul a
+{
+    margin-right: 6%;
+    color: #B0413E;
+}
+
+/*MAIN*/
+main
+{
+    width: 80%;
+    margin:0 auto;
+    text-align: center;
+}
+
+#hautMain
+{
+    color: #B0413E;
+}
+
+#greta
+{
+    font-family: "handwriting-draft_free-versRg", serif;
+    color: black;
+    font-size: 2.8em;
+    padding: 3%;
+}
+
+#sous-titre
+{
+    /*font-size: 1.2em;*/
+    padding: 1%;
+}
+
+#listes
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.titre
+{
+    cursor: pointer;
+    border: 1px solid black;
+    font-size: 1.2em;
+    /*width: calc(80%/3);*/
+}
+
+.titre:nth-child(1)
+{
+    background-color: lightgray;
+}
+
+.titre a
+{
+    color: black;
+}
+
+.titre a:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+#principale
+{
+    width: 100%;
+    min-height: 50vh;
+}
+
+#principale p
+{
+    font-size: 1.3em;
+    letter-spacing: 0.5em;
+    margin: 4% auto;
+    padding: 1%;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.8),
+                -5px 5px 5px rgba(0,0,0,0.8);
+}
+
+#resultats
+{
+    width: 100%;
+}
+
+
+.uneDiv
+{
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.para
+{
+    text-align: left;
+    /*width: 80%;*/
+    font-size: 1.2em;
+    letter-spacing: 0.5em;
+    font-family: "handwriting-draft_free-versRg", serif;
+    line-height: 2.5em;
+    /*display: inline-block;*/
+}
+
+#resultats span
+{
+    text-align: right;
+}
+
+.icones img
+{
+    width:30%;
+}
+
+.icones img:hover
+{
+    transform: scale(1.2);
+}
+
+.monBouton
+{
+    background-color: transparent;
+    border: none;
+}
+
+.monBouton:hover
+{
+    transform: scale(1.2);
+    background: transparent;
+}
+
+/*FOOTER*/
+#footer
+{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 0;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #38686a;
+    justify-content: space-around;
+    color: white;
+    line-height: 150px;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+}
+
+#footer > a
+{
+    color: white;
+}
+
+
+/*MODAL*/
+#myModalLabel
+{
+    text-align: center;
+}
+.form
+{
+    text-align: left;
+}
